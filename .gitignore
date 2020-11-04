@@ -1,3 +1,13 @@
+# User
+*.ignore
+ddns.sh
+
+# Exclude Large Files
+*.NEF
+*.NEF.xmp
+_DSC9431*
+deutsch.svg
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
