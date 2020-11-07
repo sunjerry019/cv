@@ -1,5 +1,9 @@
 \documentclass[11pt]{article}
-\usepackage[ngerman]{babel} % Set language here ngerman or english
+
+\usepackage[english]{babel} % Set language here ngerman or english
+\newif\ifSGAdd
+\SGAddfalse
+
 \usepackage[utf8]{inputenc}
 \usepackage[a4paper,left=1in,right=1in,bottom=0.8in,top=0.8in,headheight=60pt,headsep=0.5cm]{geometry}
 \usepackage{enumitem}
@@ -126,10 +130,10 @@
 
 \input{sections/summary\ifde .de\fi}
 \input{sections/skills\ifde .de\fi}
-\vspace{-\baselineskip}
-\input{sections/selectedprojects\ifde .de\fi}
-\input{sections/otherrelevantexps\ifde .de\fi}
-\input{sections/cca\ifde .de\fi}
-\input{sections/education\ifde .de\fi}
+% \vspace{-\baselineskip}
+% \input{sections/selectedprojects\ifde .de\fi}
+% \input{sections/otherrelevantexps\ifde .de\fi}
+% \input{sections/cca\ifde .de\fi}
+% \input{sections/education\ifde .de\fi}
 
 \end{document}
