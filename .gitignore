@@ -7,6 +7,9 @@ ddns.sh
 *.NEF.xmp
 _DSC9431*
 deutsch.svg
+english.svg
+*.jpg
+*.png
 
 ## Core latex/pdflatex auxiliary files:
 *.aux

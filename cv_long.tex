@@ -21,7 +21,8 @@
 % https://tex.stackexchange.com/a/376804
 \usepackage{multicol}
 \usepackage{blindtext}
-\usepackage{pdftexcmds} % https://tex.stackexchange.com/a/252944/116525
+\usepackage{pdftexcmds}  % https://tex.stackexchange.com/a/252944/116525
+\usepackage{anyfontsize} % https://texblog.org/2012/08/29/changing-the-font-size-in-latex/
 
 % ====   SET LANG =====
 	% https://tex.stackexchange.com/a/58627/116525
@@ -43,7 +44,7 @@
 	% \usepackage{textcomp}
 	\renewcommand*\oldstylenums[1]{{\fontfamily{Montserrat-TOsF}\selectfont #1}}
 	% http://www.tug.dk/FontCatalogue/
-	\renewcommand*{\ttdefault}{cmvtt}
+	\renewcommand{\ttdefault}{cmtt}
 
 	\pdfmapfile{+fonts/RobotoMono.map}
 	\font\rbtmn=fonts/rbtmmn8t
@@ -110,13 +111,15 @@
 \definecolor{headercol}{HTML}{aaaaaa}
 
 % \newcommand{\monoSp}[1]{{\fontfamily{qcr}\selectfont#1}}
-\newcommand{\monoSp}[1]{{\usefont{T1}{rbtm}{m}{n} #1}}
+% \newcommand{\monoSp}[1]{{\usefont{T1}{rbtmn}{m}{n} #1}}
+\newcommand{\monoSp}[1]{{\texttt{#1}}}
 \newcommand{\urllinkout}[2]{\href{#1}{\textcolor{text_link}{\small \texttt{#2}}}}
 \newcommand{\linkout}[2]{\href{#1}{\textcolor{text_link}{#2}}}
 % \newcommand{\code}[1]{\colorbox{code_back}{\monoSp{#1}}}
 \newcommand{\code}[1]{\monoSp{#1}}
 \newcommand{\badge}[1]{\colorbox{badgeback}{\color{white} \monoSp{#1}}}
 \newcommand{\nummer}[1]{\texttt{\large #1}}
+\newcommand{\mylatex}[0]{{\rmfamily \LaTeX}}
 
 % For summary
 \setcounter{section}{-1}
@@ -125,15 +128,17 @@
 
 % https://tex.stackexchange.com/a/386331
 
+\newcommand{\ff}[0]{\fontsize{10}{12}\selectfont}
+
 \input{header/\ifde de\else en\fi}
 \vspace{2.8cm}
-
 \input{sections/summary\ifde .de\fi}
+\input{sections/education\ifde .de\fi}
+\input{sections/otherrelevantexps\ifde .de\fi}
+\input{sections/selectedprojects\ifde .de\fi}
 \input{sections/skills\ifde .de\fi}
+\input{sections/achievements\ifde .de\fi}
 % \vspace{-\baselineskip}
-% \input{sections/selectedprojects\ifde .de\fi}
-% \input{sections/otherrelevantexps\ifde .de\fi}
 % \input{sections/cca\ifde .de\fi}
-% \input{sections/education\ifde .de\fi}
 
 \end{document}
