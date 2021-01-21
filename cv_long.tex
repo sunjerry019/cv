@@ -1,8 +1,12 @@
 \documentclass[11pt]{article}
 
-\usepackage[english]{babel} % Set language here ngerman or english
-\newif\ifSGAdd
-\SGAddfalse
+% CONFIG
+	\usepackage[english]{babel} % Set language here ngerman or english
+	\newif\ifSGAdd
+	% \SGAddfalse
+	\SGAddtrue
+	\newcommand{\type}[0]{it}
+% / CONFIG
 
 \usepackage[utf8]{inputenc}
 \usepackage[a4paper,left=1in,right=1in,bottom=0.8in,top=0.8in,headheight=60pt,headsep=0.5cm]{geometry}
@@ -71,8 +75,8 @@
 
 \usepackage{hyperref}
 \hypersetup{
-	pdftitle={Yudong Sun -- \ifde Lebenslauf\else CV\fi},
-	pdfauthor={Yudong Sun},
+	pdftitle={\ifSGAdd Sun Yudong\else Yudong Sun\fi{} -- \ifde Lebenslauf\else CV\fi},
+	pdfauthor={\ifSGAdd Sun Yudong\else Yudong Sun\fi},
 	bookmarksnumbered=true,
 	bookmarksopen=true,
 	bookmarksopenlevel=2,
@@ -130,15 +134,6 @@
 
 \newcommand{\ff}[0]{\fontsize{10}{12}\selectfont}
 
-\input{header/\ifde de\else en\fi}
-\vspace{2.8cm}
-\input{sections/summary\ifde .de\fi}
-\input{sections/education\ifde .de\fi}
-\input{sections/otherrelevantexps\ifde .de\fi}
-\input{sections/selectedprojects\ifde .de\fi}
-\input{sections/skills\ifde .de\fi}
-\input{sections/achievements\ifde .de\fi}
-% \vspace{-\baselineskip}
-% \input{sections/cca\ifde .de\fi}
+\input{\type/include.tex}
 
 \end{document}
