@@ -1,11 +1,11 @@
 \documentclass[11pt]{article}
 
 % CONFIG
-	\usepackage[english]{babel} % Set language here ngerman or english
+	\usepackage[ngerman]{babel} % Set language here ngerman or english
 	\newif\ifSGAdd
 	% \SGAddfalse
 	\SGAddtrue
-	\newcommand{\type}[0]{it}
+	\newcommand{\type}[0]{studstip}
 % / CONFIG
 
 \usepackage[utf8]{inputenc}
@@ -15,6 +15,7 @@
 \usepackage{graphicx}
 \usepackage{tikz}
 \usepackage{transparent}
+\usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{parskip}
 \usepackage{setspace}
@@ -83,9 +84,9 @@
 	pdfstartview=Fit,
 	pdfpagemode=UseOutlines,
 	colorlinks=true,
-	linkcolor=black,
+	linkcolor=black,	% black
 	filecolor=magenta,
-	urlcolor=black
+	urlcolor=black		% black
 }
 \urlstyle{same}
 
@@ -113,6 +114,8 @@
 \definecolor{skiheader}{HTML}{0392aa}
 \definecolor{subtitles}{HTML}{a9a9a9}
 \definecolor{headercol}{HTML}{aaaaaa}
+\definecolor{schtitles}{HTML}{777777}
+\definecolor{dark_gray}{HTML}{555555}
 
 % \newcommand{\monoSp}[1]{{\fontfamily{qcr}\selectfont#1}}
 % \newcommand{\monoSp}[1]{{\usefont{T1}{rbtmn}{m}{n} #1}}
@@ -124,6 +127,8 @@
 \newcommand{\badge}[1]{\colorbox{badgeback}{\color{white} \monoSp{#1}}}
 \newcommand{\nummer}[1]{\texttt{\large #1}}
 \newcommand{\mylatex}[0]{{\rmfamily \LaTeX}}
+\newcommand{\job}[1]{\textbf{#1}}
+\newcommand{\country}[1]{\textcolor{Mahogany}{#1}}
 
 % For summary
 \setcounter{section}{-1}
