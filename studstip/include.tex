@@ -1,5 +1,9 @@
 \newcommand{\ordner}[0]{studstip}
 
+\newif\ifextended
+% \extendedtrue
+\extendedfalse
+
 \graphicspath{{\ordner/}}
 
 \input{\ordner/header/header}
@@ -8,3 +12,13 @@
 \input{\ordner/sections/erfahrungen}
 \input{\ordner/sections/sozial}
 \input{\ordner/sections/sprache}
+
+
+% \makeatletter
+% \newcommand{\oneptsmaller}[1]{%
+%   \begingroup
+%   \fontsize{\dimexpr\f@size pt-1pt}{\f@baselineskip}\selectfont
+%   #1%
+%   \endgroup
+% }
+% \makeatother

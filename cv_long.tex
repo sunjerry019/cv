@@ -1,11 +1,11 @@
 \documentclass[11pt]{article}
 
 % CONFIG
-	\usepackage[ngerman]{babel} % Set language here ngerman or english
+	\usepackage[ngerman]{babel}     % Set language here ngerman or english
 	\newif\ifSGAdd
 	% \SGAddfalse
 	\SGAddtrue
-	\newcommand{\type}[0]{studstip}
+	\newcommand{\type}[0]{studstip} % folder with an include.tex
 % / CONFIG
 
 \usepackage[utf8]{inputenc}
@@ -28,6 +28,7 @@
 \usepackage{blindtext}
 \usepackage{pdftexcmds}  % https://tex.stackexchange.com/a/252944/116525
 \usepackage{anyfontsize} % https://texblog.org/2012/08/29/changing-the-font-size-in-latex/
+% \usepackage{relsize}	 % https://tex.stackexchange.com/a/365025/116525
 
 % ====   SET LANG =====
 	% https://tex.stackexchange.com/a/58627/116525
@@ -40,6 +41,13 @@
 	\fi
 	\makeatother
 % ==== / SET LANG =====
+
+% ====   LANGUAGE SPECIFIC STUFF ====
+\ifde
+	\usepackage{icomma} 
+\else
+\fi
+% ==== / LANGUAGE SPECIFIC STUFF ====
 
 % ====== FONTS ======
 	\usepackage[defaultfam,tabular,lining]{montserrat} %% Option 'defaultfam'
@@ -57,6 +65,15 @@
 	\font\rbtmnlinks=fonts/rbtmmn8t at 8pt
 
 	% for LaTeX https://tex.stackexchange.com/a/25251
+
+	\makeatletter
+	\newcommand{\smaller}[2]{%
+		\begingroup
+			\fontsize{\dimexpr\f@size pt-#1pt}{\f@baselineskip}\selectfont
+			#2%
+		\endgroup
+	}
+	\makeatother
 % ====== /FONTS ======
 
 % Fancy Header
@@ -70,7 +87,7 @@
 	% \renewcommand{\headrule}{\vspace{-10pt} \hbox to\headwidth{\color{headercol}\leaders\hrule height \headrulewidth\hfill}}
 	% \lhead{\color{headercol} Curriculum Vitae}
 	% \rhead{\color{headercol} Sun Yudong}
-	\cfoot{\ttfamily \thepage\space of \pageref{LastPage}}
+	\cfoot{\ttfamily \thepage\space \ifde von \else of \fi \pageref{LastPage}}
 	% https://www.overleaf.com/learn/latex/Page_numbering
 	% https://tex.stackexchange.com/a/74354
 
@@ -129,6 +146,8 @@
 \newcommand{\mylatex}[0]{{\rmfamily \LaTeX}}
 \newcommand{\job}[1]{\textbf{#1}}
 \newcommand{\country}[1]{\textcolor{Mahogany}{#1}}
+\newcommand{\highlight}[1]{\textcolor{MidnightBlue}{#1}}
+\newcommand{\ym}[2]{#1{\footnotesize /#2}}
 
 % For summary
 \setcounter{section}{-1}
