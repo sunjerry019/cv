@@ -3,12 +3,13 @@
 % CONFIG
 	\usepackage[ngerman]{babel}     % Set language here ngerman or english
 	\newif\ifSGAdd
-	% \SGAddfalse
-	\SGAddtrue
+	\SGAddfalse
+	% \SGAddtrue
 	\newcommand{\type}[0]{studstip} % folder with an include.tex
 % / CONFIG
 
 \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 \usepackage[a4paper,left=1in,right=1in,bottom=0.8in,top=0.8in,headheight=60pt,headsep=0.5cm]{geometry}
 \usepackage{enumitem}
 \usepackage[dvipsnames]{xcolor}
@@ -25,10 +26,13 @@
 % https://tex.stackexchange.com/a/26483
 % https://tex.stackexchange.com/a/376804
 \usepackage{multicol}
-\usepackage{blindtext}
+% \usepackage{blindtext}
 \usepackage{pdftexcmds}  % https://tex.stackexchange.com/a/252944/116525
 \usepackage{anyfontsize} % https://texblog.org/2012/08/29/changing-the-font-size-in-latex/
 % \usepackage{relsize}	 % https://tex.stackexchange.com/a/365025/116525
+
+\usepackage{csquotes}
+\MakeOuterQuote{"}
 
 % ====   SET LANG =====
 	% https://tex.stackexchange.com/a/58627/116525
@@ -75,6 +79,16 @@
 	}
 	\makeatother
 % ====== /FONTS ======
+% ====   GERMAN UMLAUTS ====
+\ifde
+	\usepackage{selinput}
+	\SelectInputMappings{
+		adieresis={ä},
+		germandbls={ß}
+	} % https://www.namsu.de/Extra/befehle/Umlaute_V2017.html
+\else
+\fi
+% ==== / GERMAN UMLAUTS ====
 
 % Fancy Header
 % \pagenumbering{gobble}
@@ -147,7 +161,16 @@
 \newcommand{\job}[1]{\textbf{#1}}
 \newcommand{\country}[1]{\textcolor{Mahogany}{#1}}
 \newcommand{\highlight}[1]{\textcolor{MidnightBlue}{#1}}
-\newcommand{\ym}[2]{#1{\footnotesize /#2}}
+\newcommand{\ym}[2]{#1{\smaller{1}{/#2}}}
+\newcommand{\tym}[2]{\texttt{\ym{#1}{#2}}}
+\newcommand{\coy}[2]{
+	\if\relax\detokenize{#1}\relax
+	  \smaller{1}{\country{#2}}%
+	\else
+	  \smaller{1}{#1, \country{#2}}%
+	\fi
+} % https://tex.stackexchange.com/a/53091/116525
+\newcommand{\todo}[1]{\textcolor{red}{TODO: #1}}
 
 % For summary
 \setcounter{section}{-1}
