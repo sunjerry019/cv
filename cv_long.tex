@@ -32,6 +32,7 @@
 \usepackage{pdftexcmds}  % https://tex.stackexchange.com/a/252944/116525
 \usepackage{anyfontsize} % https://texblog.org/2012/08/29/changing-the-font-size-in-latex/
 % \usepackage{relsize}	 % https://tex.stackexchange.com/a/365025/116525
+\usepackage{intcalc}
 
 \usepackage{csquotes}
 \MakeOuterQuote{"}
@@ -73,12 +74,18 @@
 	% for LaTeX https://tex.stackexchange.com/a/25251
 
 	\makeatletter
-	\newcommand{\smaller}[2]{%
-		\begingroup
-			\fontsize{\dimexpr\f@size pt-#1pt}{\f@baselineskip}\selectfont
-			#2%
-		\endgroup
-	}
+		\newcommand{\smaller}[2]{%
+			\begingroup
+				\fontsize{\dimexpr\f@size pt-#1pt}{\f@baselineskip}\selectfont
+				#2%
+			\endgroup
+		}
+		\newcommand{\bigger}[2]{%
+			\begingroup
+				\fontsize{\dimexpr\f@size pt+#1pt}{\f@baselineskip}\selectfont
+				#2%
+			\endgroup
+		}
 	\makeatother
 % ====== /FONTS ======
 % ====   GERMAN UMLAUTS ====
@@ -163,13 +170,13 @@
 \newcommand{\job}[1]{\textbf{#1}}
 \newcommand{\country}[1]{\textcolor{Mahogany}{#1}}
 \newcommand{\highlight}[1]{\textcolor{MidnightBlue}{#1}}
-\newcommand{\ym}[2]{#1{\smaller{1}{/#2}}}
+\newcommand{\ym}[2]{\bigger{1}{#1}{\smaller{1}{/#2}}}
 \newcommand{\tym}[2]{\texttt{\ym{#1}{#2}}}
 \newcommand{\coy}[2]{
 	\if\relax\detokenize{#1}\relax
 	  \smaller{1}{\country{#2}}%
 	\else
-	  \smaller{1}{#1, \country{#2}}%
+	  \smaller{1}{\textcolor{gray}{#1 /} \country{#2}}%
 	\fi
 } % https://tex.stackexchange.com/a/53091/116525
 \newcommand{\todo}[1]{\textcolor{red}{TODO: #1}}
