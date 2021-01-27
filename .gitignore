@@ -287,3 +287,6 @@ TSWLatexianTemp*
 
 # Makeindex log files
 *.lpz
+
+# Font Files
+!fonts/*.tfm
