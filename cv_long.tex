@@ -6,6 +6,8 @@
 	\SGAddfalse
 	% \SGAddtrue
 	\newcommand{\type}[0]{studstip} % folder with an include.tex
+	\newif\ifsummary
+	\summaryfalse
 % / CONFIG
 
 \usepackage[utf8]{inputenc}
@@ -81,11 +83,11 @@
 % ====== /FONTS ======
 % ====   GERMAN UMLAUTS ====
 \ifde
-	\usepackage{selinput}
-	\SelectInputMappings{
-		adieresis={ä},
-		germandbls={ß}
-	} % https://www.namsu.de/Extra/befehle/Umlaute_V2017.html
+	% \usepackage{selinput}
+	% \SelectInputMappings{
+	% 	adieresis={ä},
+	% 	germandbls={ß}
+	% } % https://www.namsu.de/Extra/befehle/Umlaute_V2017.html
 \else
 \fi
 % ==== / GERMAN UMLAUTS ====
@@ -171,9 +173,10 @@
 	\fi
 } % https://tex.stackexchange.com/a/53091/116525
 \newcommand{\todo}[1]{\textcolor{red}{TODO: #1}}
+\newcommand{\cefr}[1]{\textcolor{gray}{\textit{[CEFR #1]}}}
 
 % For summary
-\setcounter{section}{-1}
+\ifsummary\setcounter{section}{-1}\else\fi
 
 \begin{document}
 
