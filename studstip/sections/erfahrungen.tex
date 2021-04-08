@@ -1,5 +1,5 @@
 \section{\textcolor{\getcol{\thesection}}{Praktische Erfahrung}} %Fachbezogene Arbeitserfahrung
-\vspace{-\baselineskip}
+\ifextended\vspace{-0.8\baselineskip}\else\vspace{-\baselineskip}\fi
 
 \begin{center}
 	\ff
@@ -18,21 +18,31 @@
 % 			Wissenschaftskommunikation
 		\ifextended
 			\tym{2019}{02} - \tym{2019}{09}
-			&& \job{Tätigkeit als Selbstständiger Softwareentwickler} \hfill \coy{}{SG}\\ %[-0.7em]
-% 			&& \smaller{2}{Full-Stack Webentwicklung und Automatisierung von Aufgaben} \\
+			&& \job{Tätigkeit als Selbstständiger Softwareentwickler} \hfill \coy{}{SG}\\[-0.7em]
+			&& \smaller{2}{--- Full-Stack Webentwicklung und Verwaltung von Datenbanken} \\[-1em]
+			&& \smaller{2}{--- Automatisierung von Prozessen mittels Python} \\
 		\else\fi
 		\tym{2017}{02} - \tym{2019}{02}
 			&& \job{Verpflichtender Militärdienst} \hfill \coy{Streitkräfte Singapurs}{SG} \\
 		\tym{2017}{01} - \tym{2017}{02}
 			&& \job{Lehrpraktikant} \hfill \coy{Queensway Secondary School}{SG} \\[-0.7em]
 			&& \smaller{1}{Unterrichten von 9. und 10. Klassen in Physik und Mathematik} \\
+		\ifextended
+				\tym{2011}{01} - \tym{2016}{06}
+					&& \job{Mitglied der Computer AG} \hfill \coy{Hwa Chong Institution}{SG} \\[-0.7em]
+					&& \smaller{1}{Stellvertretender Vorsitzender im Jahr \texttt{2014}}
+			\end{tabularx}
+			% \newgeometry{left=1in,right=1in,bottom=0.8in,top=0.2in,headheight=10pt,headsep=0.2cm}
+			% \vspace{-1cm}
+			\begin{tabularx}{\textwidth}{ @{} l @{}p{\dist}@{} X @{}}
+		\else\fi
 		\tym{2014}{01} - \tym{2016}{06}
 			&& \job{Gründungsmitglied der Photonik AG} \\[-1em]
 			&& \hfill \coy{Hwa Chong Science Research Center, Photoniklabor}{SG} \\[-0.5em]
 			&& \smaller{2}{--- Aufbau des Labors, Programmierung von Software für Geräteschnittstellen} \\[-1em] % Erstellung der Skripte
 			&& \smaller{2}{--- Statische Korrelationsanalyse von Photon Bunching mit Silizium Avalanche-Photonen\-detektoren} \\[-0.7em]
 			&& \smaller{2}{\texttt{2016} \hspace{0.5em} Poster-Präsentation beim \textit{Institute of Physics Singapore} (IPS) \textit{Meeting}:} \\[-1em]
-			&& \smaller{2}{\phantom{\texttt{2016}} \hspace{0.5em} {"Measuring Temporal Coherence of Light from a Mercury Vapour Lamp"}} \\
+			&& \smaller{2}{\phantom{\texttt{2016}} \hspace{0.5em} {"Measuring Temporal Coherence of Light from a Mercury Vapour Lamp"}} \ifextended\\[-1em]\else\\\fi
 % 			&& \smaller{2}{\texttt{2016} \hspace{0.5em} \textit{Measuring Temporal Coherence of Light from a Mercury Vapour Lamp}} \\[-1em]
 % 			&& \smaller{2}{\texttt{2016} \hspace{0.5em} Institute of Physics Singapore (IPS) Meeting, Poster Beiträger}
 	\end{tabularx}
