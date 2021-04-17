@@ -5,9 +5,12 @@
 	\newif\ifSGAdd
 	\SGAddfalse
 	% \SGAddtrue
-	\newcommand{\type}[0]{studstip} % folder with an include.tex
+	\newcommand{\type}[0]{attoworld} % folder with an include.tex
 	\newif\ifsummary
 	\summaryfalse
+
+	\newif\iflatexmark
+	\latexmarkfalse
 % / CONFIG
 
 \usepackage[utf8]{inputenc}
@@ -113,6 +116,7 @@
 	% \lhead{\color{headercol} Curriculum Vitae}
 	% \rhead{\color{headercol} Sun Yudong}
 	\cfoot{\ttfamily \thepage\space \ifde von \else of \fi \pageref{LastPage}}
+	\iflatexmark \rfoot{\scriptsize \color{gray} \ifde Mit {\rmfamily\LaTeX}\fi} \else\fi
 	% https://www.overleaf.com/learn/latex/Page_numbering
 	% https://tex.stackexchange.com/a/74354
 
@@ -183,6 +187,8 @@
 } % https://tex.stackexchange.com/a/53091/116525
 \newcommand{\todo}[1]{\textcolor{red}{TODO: #1}}
 \newcommand{\cefr}[1]{\textcolor{gray}{\textit{[CEFR #1]}}}
+\newcommand{\blanko}[0]{\textcolor{white}{.}}
+\newcommand{\paper}[1]{\textcolor{ForestGreen}{#1}}
 
 % For summary
 \ifsummary\setcounter{section}{-1}\else\fi
